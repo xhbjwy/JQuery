@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+	
+	
+
+
+	<style type="text/css" >
+		
+		.hdmb1,.hdmb2
+		{
+			padding:5px;
+			text-align:center;
+			width: 650px;
+			background-color:#e5eecc;
+			border:solid 1px #c3c3c3;
+		}
+		.hdmb2
+		{
+			padding-top: 10px;
+			padding-bottom: 30px;
+			display:none;
+		}
+		
+		.img1{
+			display: none;
+		}
+		.img2{
+			display: none;
+		}
+		.img3{
+			display: none;
+		}
+		.button6,.button7,.button4,.button5,.button9,.button10{
+			display: none;
+		}
+
+
+	</style>
+
+	<script  >
+		$(document).ready(function(){
+			var i=0;
+			var j=0;
+			$(".hdmb1").click(function(){
+				$(".hdmb2 ").slideToggle("slow");
+			});
+
+			//操作按钮
+			$(".hdmb2 .button8").click(function(){
+				$(".hdmb2 .button4").show();
+				$(".hdmb2 .button5").show();
+				$(".hdmb2 .button6").show();
+				$(".hdmb2 .button7").show();
+				$(".hdmb2 .button8").hide();
+				$(".hdmb2 .button9").show();
+				$(".hdmb2 .button10").show();
+			});
+			$(".hdmb2 .button9").click(function(){
+				$(".hdmb2 .button9").hide();
+				$(".hdmb2 .button8").show();
+				$(".hdmb2 .button4").hide();
+				$(".hdmb2 .button5").hide();
+				$(".hdmb2 .button6").hide();
+				$(".hdmb2 .button7").hide();
+				$(".hdmb2 .button10").hide();
+			});
+
+
+			//查看图片
+			$(".hdmb2 .button1").click(function(){
+				i=1;
+				$(".hdmb2 .img1").fadeToggle(500);
+				$(".hdmb2 .img2").hide();
+				$(".hdmb2 .img3").hide();
+				
+			});
+			$(".hdmb2 .button2").click(function(){
+				i=2;
+				$(".hdmb2 .img2").fadeToggle(500);
+				$(".hdmb2 .img1").hide();
+				$(".hdmb2 .img3").hide();
+				
+			});
+			$(".hdmb2 .button3").click(function(){
+				i=3;
+				$(".hdmb2 .img3").fadeToggle(500);
+				$(".hdmb2 .img1").hide();
+				$(".hdmb2 .img2").hide();
+				
+			});
+
+
+
+			//当前图片变淡
+			$(".hdmb2 .button4").click(function(){
+				if(i==1) {
+					$(".hdmb2 .img1").fadeTo("slow",0.15);
+					$(".hdmb2 .img2").fadeTo("slow",1);
+					$(".hdmb2 .img3").fadeTo("slow",1);
+					$(".hdmb2 .img2").hide();
+					$(".hdmb2 .img3").hide();
+				}
+				if(i==2) {
+					$(".hdmb2 .img1").fadeTo("slow",1);
+					$(".hdmb2 .img2").fadeTo("slow",0.15);
+					$(".hdmb2 .img3").fadeTo("slow",1);
+					$(".hdmb2 .img1").hide();
+					$(".hdmb2 .img3").hide();
+				}
+				if(i==3) {
+					$(".hdmb2 .img1").fadeTo("slow",1);
+					$(".hdmb2 .img2").fadeTo("slow",1);
+					$(".hdmb2 .img3").fadeTo("slow",0.15);
+					$(".hdmb2 .img1").hide();
+					$(".hdmb2 .img2").hide();
+				}
+			})
+
+
+			//当前图片颜色恢复
+			$(".hdmb2 .button5").click(function(){
+				if(i==1) {
+					$(".hdmb2 .img1").fadeTo("slow",1);
+					$(".hdmb2 .img2").fadeTo("slow",1);
+					$(".hdmb2 .img3").fadeTo("slow",1);
+					$(".hdmb2 .img2").hide();
+					$(".hdmb2 .img3").hide();
+				}
+				if(i==2) {
+					$(".hdmb2 .img1").fadeTo("slow",1);
+					$(".hdmb2 .img2").fadeTo("slow",1);
+					$(".hdmb2 .img3").fadeTo("slow",1);
+					$(".hdmb2 .img1").hide();
+					$(".hdmb2 .img3").hide();
+				}
+				if(i==3) {
+					$(".hdmb2 .img1").fadeTo("slow",1);
+					$(".hdmb2 .img2").fadeTo("slow",1);
+					$(".hdmb2 .img3").fadeTo("slow",1);
+					$(".hdmb2 .img1").hide();
+					$(".hdmb2 .img2").hide();
+				}
+			})
+
+
+			//放大图片
+			$(".hdmb2 .button6").click(function(){
+				if(i==1){
+					$(".hdmb2 .img1").animate({ height:'+=50px',width:'+=50px'});
+				}
+				if(i==2){
+					$(".hdmb2 .img2").animate({ height:'+=50px',width:'+=50px'});
+				}
+				if(i==3){
+					$(".hdmb2 .img3").animate({ height:'+=50px',width:'+=50px'});
+				}
+			});
+			//缩小图片
+			$(".hdmb2 .button7").click(function(){
+				if(i==1){
+					$(".hdmb2 .img1").animate({ height:'-=50px',width:'-=50px'});
+				}
+				if(i==2){
+					$(".hdmb2 .img2").animate({ height:'-=50px',width:'-=50px'});
+				}
+				if(i==3){
+					$(".hdmb2 .img3").animate({ height:'-=50px',width:'-=50px'});
+				}
+			});
+			//图片大小还原
+			$(".hdmb2 .button10").click(function(){
+				if(i==1){
+					$(".hdmb2 .img1").animate({ height:'432px',width:'650px'});
+				}
+				if(i==2){
+					$(".hdmb2 .img2").animate({ height:'396px',width:'650px'});
+				}
+				if(i==3){
+					$(".hdmb2 .img3").animate({ height:'406px',width:'650px'});
+				}
+			});
+
+
+		});
+
+	</script>
+
+
+</head>
+<body>
+	
+	<h2 class="hdmb" >我的相册</h2>
+	<div class="hdmb1">相册</div>
+	<div class="hdmb2">
+		<button class="button1" >图片1</button>
+		<button class="button2" >图片2</button>
+		<button class="button3" >图片3</button>
+		<button class="button8" >打开操作</button>
+		<button class="button9" >关闭操作</button>
+		<img class="img1" src="http://t.cn/RnLEakO" />
+		<img class="img2" src="http://pic.58pic.com/58pic/11/83/15/95958PICy2B.jpg" />
+		<img src="http://scimg.jb51.net/allimg/151113/14-15111310522aG.jpg" class="img3" />
+		<br>
+		
+		<button class="button6" >放大</button>
+		<button class="button7" >缩小</button>
+		<button class="button10">大小还原</button>
+		<button class="button4" >图片变淡</button>
+		<button class="button5" >图片颜色恢复</button>
+	</div>
+
+   
+
+
+</body>
+</html>
